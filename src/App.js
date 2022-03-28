@@ -1,25 +1,52 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Header from './components/Header';
+import Home from './components/Home';
+import SignLanguage from './components/SignLanguage';
+import { 
+  Container
+} from 'react-bootstrap';
+
+import { coursesData } from './data/data';
+import { Component } from 'react';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+class App extends Component {
+
+
+  state = {
+    userInput: "",
+    messages: [],
+    translatorTyping: false
+  }
+
+  render() {
+    return (
+      <Container className="App">
+        <Header />
+        <Router>
+            <Switch>
+              <Route path="/start">
+                <SignLanguage state={this.state} />
+              </Route>
+              <Route path="/">
+                  <Home state={this.state} />
+              </Route>
+            </Switch>
+        </Router>
+      </Container>
+    )
+  };
 }
 
 export default App;

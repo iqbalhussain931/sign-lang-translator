@@ -1,10 +1,119 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
 .App {
   text-align: center;
+  font-family: monospace;
+  margin-top: 40px;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 180px;
   pointer-events: none;
+}
+
+.chat-online {
+  color: #34ce57
+}
+
+.chat-offline {
+  color: #e4606d
+}
+
+.chat-messages {
+  display: flex;
+  min-height: 200px;
+  flex-direction: column;
+  max-height: 600px;
+  overflow-y: scroll
+}
+.chat-title {
+  text-align: left;
+  padding-left: 20px;
+}
+.chat-message-left,
+.chat-message-right {
+  display: flex;
+  flex-shrink: 0
+}
+
+.chat-message-left {
+  margin-right: auto
+}
+
+.chat-message-right {
+  flex-direction: row-reverse;
+  margin-left: auto;
+  width: 100%;
+}
+
+
+.chat-message-left .text{
+  text-align: left;
+}
+
+.chat-message-right .text{
+  text-align: left;
+}
+
+.py-3 {
+  padding-top: 1rem!important;
+  padding-bottom: 1rem!important;
+}
+.px-4 {
+  padding-right: 1.5rem!important;
+  padding-left: 1.5rem!important;
+}
+.flex-grow-0 {
+  flex-grow: 0!important;
+}
+.border-top {
+  border-top: 1px solid #dee2e6!important;
+}
+
+.group-message{
+  display: inline-block;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.single-message{
+  display: inline-block;
+  flex-flow: column wrap;
+  margin-right: 10px;
+}
+.single-message-chars{
+  /* display: flex; */
+  /* flex-flow: column wrap; */
+  /* margin-right: 10px; */
+  margin-bottom: 10px;;
+}
+.theme-bg {
+  background-color: rgb(188, 216, 245) !important;
+}
+.card-body{
+  box-shadow: 0px 0px 5px 3px rgba(188, 216, 245,0.5);
+}
+.single-message-word{
+  background-color: #eee;
+  padding: 2px;
+  padding-left: 10px;
+}
+.single-message-chars img {
+  max-width: 100%;
+  width: 55px;
+  height: 55px;
+}
+
+.aval-cmd-wrapper .list-group-item{
+  font-size: 14px;
+}
+.aval-cmd-wrapper .list-group-item:hover{
+  background-color: #bcd8f5;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -12,6 +121,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
 
 .App-header {
   background-color: #282c34;
@@ -36,3 +147,4 @@
     transform: rotate(360deg);
   }
 }
+
